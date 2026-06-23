@@ -1,32 +1,56 @@
 package llanquihue.tour.main;
 
+import llanquihue.tour.model.*;
 import llanquihue.tour.data.GestorDatos;
-import llanquihue.tour.model.Tour;
-
-import java.util.ArrayList;
 
 public class Main {
+
     public static void main(String[] args) {
 
-        GestorDatos gestor = new GestorDatos();
+        GestorDatos datos = new GestorDatos();
+        datos.cargarDesdeArchivo("datos.txt");
 
-        ArrayList<Tour> tours = gestor.cargarTours();
-
-        System.out.println("TODOS LOS TOURS");
-
-        for (Tour t : tours) {
+        System.out.println("=== TOURS ===");
+        for (Tour t : datos.listarTours()) {
             System.out.println(t);
         }
 
-        System.out.println("TOURS GASTRONOMICOS");
-
-        for (Tour t : tours) {
-
-            if (t.getTipo().equals("Gastronomía")) {
-                System.out.println(t);
-            }
-
+        System.out.println("\n=== CLIENTES ===");
+        for (Cliente c : datos.listarClientes()) {
+            System.out.println(c);
         }
+
+        System.out.println("\n=== GUIAS ===");
+        for (Guia g : datos.listarGuias()) {
+            System.out.println(g);
+        }
+
+        System.out.println("\n=== OPERADORES ===");
+        for (Operador o : datos.listarOperadores()) {
+            System.out.println(o);
+        }
+
+
+
+        System.out.println("\n=== FILTRO POR LUGAR ===");
+        for (Tour t : datos.filtrarPorLugar("Puerto Varas")) {
+            System.out.println(t);
+        }
+
+        System.out.println("\n=== FILTRO POR PRECIO <= 22000 ===");
+        for (Tour t : datos.filtrarPorPrecioMax(22000)) {
+            System.out.println(t);
+        }
+
+        System.out.println("\n=== BUSCAR TOUR ===");
+        Tour encontrado = datos.buscarTourPorNombre("City Tour");
+
+        if (encontrado != null) {
+            System.out.println(encontrado);
+        } else {
+            System.out.println("No encontrado");
+        }
+
 
     }
 }

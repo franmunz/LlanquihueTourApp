@@ -1,19 +1,9 @@
 # Llanquihue Tour App
 
-Es una aplicación desarrollada en Java para la gestión de información de la agencia de turismo "Llanquihue Tour"
+Es una aplicación desarrollada en Java que permite gestionar información relacionada con servicios turísticos de la zona de Llanquihue.
 
-El sistema permite leer datos almacenados en un archivo de texto (`tours.txt`), crear objetos de tipo `Tour`, almacenarlos en una colección `ArrayList` y mostrar la información de los tours registrados, además de realizar filtros según sus características.
-
-## Funcionamiento
-
-El programa realiza las siguientes acciones:
-
-1. Lee la información desde el archivo `tours.txt`.
-2. Separa los datos utilizando el carácter `;`.
-3. Crea objetos `Tour` con la información obtenida.
-4. Almacena los objetos en un `ArrayList`.
-5. Muestra todos los tours registrados.
-6. Filtra los tours según una condición determinada.
+El sistema permite cargar datos desde un archivo .txt, administrar tours, clientes, guías y operadores turísticos, además de realizar búsquedas y filtros sobre los tours disponibles.
+El proyecto fue desarrollado aplicando conceptos de Programación Orientada a Objetos (POO), manejo de archivos y organización por paquetes.
 
 ## Estructura del proyecto
 
@@ -21,31 +11,122 @@ LlanquihueTourApp
 │
 ├── src
 │ └── main
-│ ├── java
-│ │ └── llanquihue.tour
-│ │
-│ │ ├── data
-│ │ │ └── GestorDatos.java
-│ │ │
-│ │ ├── main
-│ │ │ └── Main.java
-│ │ │
-│ │ └── model
-│ │ └── Tour.java
-│ │
-│ └── resources
-│ └── tours.txt
+│  └── java
+│   └── llanquihue.tour
+│   │
+│   ├── data
+│   │ └── GestorDatos.java
+│   │
+│   ├── main
+│   │ └── Main.java
+│   │
+│   └── model
+│   │ ├── Cliente.java
+│   │ ├── Direccion.java
+│   │ ├── Guia.java
+│   │ ├── Operador.java
+│   │ ├── Persona.java
+│   │ └── Tour.java
+│   │
+│   └── util
+│     └── Validacion.java
+│  
+├── datos.txt
 │
 ├── pom.xml
 └── README.md
 
-## Formato del archivo tours.txt
+## Funcionalidades principales
 
-Los datos se almacenan separados por punto y coma: Nombre del tour;Tipo;Precio
+### Gestión de Tours
 
-## Instrucciones para ejecutar
+Permite almacenar información de tours:
 
-1. Clonar o descargar este repositorio.
-2. Abrir el proyecto utilizando IntelliJ IDEA.
-3. Verificar que Java esté correctamente configurado.
-4. Ejecutar la clase principal: Main.java
+- Nombre del tour
+- Lugar donde se realiza
+- Precio
+
+Ejemplo:
+
+- Tour Cultural, Puerto Varas, 20000
+
+### Gestión de Personas
+
+El sistema utiliza una clase base Persona, desde donde heredan:
+
+- Cliente
+- Guía
+- Operador
+
+Cada persona posee:
+
+- Nombre
+- RUT
+- Direccion
+
+### Clientes
+
+Permite registrar clientes asociados a un tour adquirido.
+
+Ejemplo:
+
+- Nombre: Ana Torres
+- Rut: 17557831-5
+- Tour adquirido: Ruta Gastronómica
+
+### Guías
+
+Permite registrar guías turísticos indicando su especialidad.
+
+Ejemplo:
+
+- Nombre Guia: Pedro Diaz
+- Especialidad: Turismo Aventura
+
+### Operadores
+
+Permite registrar empresas o personas encargadas de entregar servicios turísticos.
+
+Ejemplo:
+
+- Nombre Operador: PatagonTours
+- Tipo de Servicio: Alojamiento
+
+### Carga de datos
+
+Los datos se almacenan en un archivo: datos.txt
+
+El formato utilizado es:
+
+- TIPO;dato1;dato2;dato3
+
+Ejemplo:
+
+- TOUR;City Tour;Puerto Varas;15000
+
+## Funciones de búsqueda y filtrado
+
+El sistema permite:
+
+- Buscar tour por nombre
+- Filtrar tour por lugar
+- Filtrar tour por precio máximo
+
+## Ejecución del programa
+
+1. Ejecutar la clase:
+
+- Main.java
+
+2. El programa carga automáticamente:
+
+- datos.txt
+
+3. Muestra:
+
+- Tours disponibles
+- Clientes registrados
+- Guías
+- Operadores
+- Resultados de filtros
+- Búsquedas

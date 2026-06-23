@@ -1,0 +1,23 @@
+TOUR;Ruta Gastronómica;Ensenada;30000
+TOUR;Paseo Lacustre;Frutillar;25000
+TOUR;Tour Cultural;Puerto Varas;20000
+TOUR;Aventura Volcán;OSORNO;40000
+TOUR;City Tour;Puerto Varas;15000
+
+CLIENTE;Ana Torres;17557831-5;Los Laureles 123;Puerto Varas;Ruta Gastronómica
+CLIENTE;Carlos Moya;18456932-8;Avenida Central 456;Frutillar;Paseo Lacustre
+CLIENTE;Fernanda Ríos;19233445-6;Calle Lago 789;Puerto Montt;Tour Cultural
+CLIENTE;Diego Vargas;16890234-1;Los Pinos 321;Osorno;Aventura Volcán
+CLIENTE;Valentina Soto;20111223-9;Río Sur 654;Valdivia;City Tour
+
+GUIA;Pedro Diaz;33333333-3;Los Alerces 112;Valdivia;Turismo Aventura
+GUIA;Jorge Pérez;15566778-9;Av. Costanera 210;Frutillar;Paseo Lacustre
+GUIA;Camila Soto;16677889-0;Los Robles 333;Osorno;Aventura Volcán
+GUIA;Andrés Muñoz;17788990-1;Ruta 5 Sur 120;Puerto Varas;Tour Gastronómico
+GUIA;Fernanda López;18899001-2;Calle Andes 88;Ensenada;Tour Fotográfico
+
+OPERADOR;PatagonTours;11111111-1;Los Maitenes;Llanquihue;Alojamiento
+OPERADOR;Llanquihue Tours;17777777-7;Camino Lago 300;Llanquihue;Excursiones
+OPERADOR;BosqueSur;18888888-8;Calle Río 55;Ensenada;Alojamiento
+OPERADOR;Ruta Austral;19999999-9;Los Alerces 112;Puerto Varas;Transporte
+OPERADOR;ValleLago;20000000-0;Costanera 999;Frutillar;Guía turístico

@@ -2,30 +2,30 @@ package llanquihue.tour.model;
 
 public class Tour {
 
-    private String nombre;
-    private String tipo;
+    private String nombreTour;
+    private String lugar;
     private double precio;
 
-    public Tour(String nombre, String tipo, double precio){
-        this.nombre = nombre;
-        this.tipo = tipo;
+    public Tour(String nombreTour, String lugar, double precio){
+        this.nombreTour = nombreTour;
+        this.lugar = lugar;
         this.precio = precio;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreTour() {
+        return nombreTour;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreTour(String nombreTour) {
+        this.nombreTour = nombreTour;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getLugar() {
+        return lugar;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setLugar(String lugar) {
+        this.lugar = lugar;
     }
 
     public double getPrecio() {
@@ -38,6 +38,6 @@ public class Tour {
 
     @Override
     public String toString() {
-        return "Tour{" + "Nombre: " + nombre + ", Tipo: " + tipo + ", Precio: " + precio + "}";
+        return  "Nombre Tour: " + nombreTour + ", Lugar: " + lugar + ", Precio: " + precio;
     }
 }
