@@ -2,6 +2,7 @@ package llanquihue.tour.main;
 
 import llanquihue.tour.model.*;
 import llanquihue.tour.data.GestorDatos;
+import llanquihue.tour.data.GestorServicios;
 
 public class Main {
 
@@ -37,7 +38,7 @@ public class Main {
             System.out.println(t);
         }
 
-        System.out.println("\n=== FILTRO POR PRECIO <= 22000 ===");
+        System.out.println("\n=== FILTRO POR PRECIO <= 20000 ===");
         for (Tour t : datos.filtrarPorPrecioMax(22000)) {
             System.out.println(t);
         }
@@ -51,6 +52,10 @@ public class Main {
             System.out.println("No encontrado");
         }
 
+        System.out.println("\n=== SERVICIOS TURISTICOS ===");
+
+        GestorServicios gestor = new GestorServicios();
+                gestor.mostrarServicios();
+        }
 
     }
-}

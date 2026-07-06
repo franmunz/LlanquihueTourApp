@@ -1,6 +1,6 @@
 # Llanquihue Tour App
 
-Es una aplicación desarrollada en Java que permite gestionar información relacionada con servicios turísticos de la zona de Llanquihue.
+Es una aplicación desarrollada en Java que permite gestionar información relacionada con servicios turísticos de la zona de Los Lagos.
 
 El sistema permite cargar datos desde un archivo .txt, administrar tours, clientes, guías y operadores turísticos, además de realizar búsquedas y filtros sobre los tours disponibles.
 El proyecto fue desarrollado aplicando conceptos de Programación Orientada a Objetos (POO), manejo de archivos y organización por paquetes.
@@ -16,6 +16,7 @@ LlanquihueTourApp
 │   │
 │   ├── data
 │   │ └── GestorDatos.java
+│   │ └── GestorServicios.java
 │   │
 │   ├── main
 │   │ └── Main.java
@@ -26,8 +27,12 @@ LlanquihueTourApp
 │   │ ├── Guia.java
 │   │ ├── Operador.java
 │   │ ├── Persona.java
-│   │ └── Tour.java
-│   │
+│   │ ├── Tour.java
+│   │ ├── ServicioTuristico.java 
+│   │ ├── RutaGastronomica.java
+│   │ ├── PaseoLacustre.java 
+│   │ └── ExcursionCultural.java
+│   │ 
 │   └── util
 │     └── Validacion.java
 │  
@@ -46,7 +51,7 @@ Permite almacenar información de tours:
 - Lugar donde se realiza
 - Precio
 
-Ejemplo:
+**Ejemplo:**
 
 - Tour Cultural, Puerto Varas, 20000
 
@@ -68,7 +73,7 @@ Cada persona posee:
 
 Permite registrar clientes asociados a un tour adquirido.
 
-Ejemplo:
+**Ejemplo:**
 
 - Nombre: Ana Torres
 - Rut: 17557831-5
@@ -78,7 +83,7 @@ Ejemplo:
 
 Permite registrar guías turísticos indicando su especialidad.
 
-Ejemplo:
+**Ejemplo:**
 
 - Nombre Guia: Pedro Diaz
 - Especialidad: Turismo Aventura
@@ -87,7 +92,7 @@ Ejemplo:
 
 Permite registrar empresas o personas encargadas de entregar servicios turísticos.
 
-Ejemplo:
+**Ejemplo:**
 
 - Nombre Operador: PatagonTours
 - Tipo de Servicio: Alojamiento
@@ -100,7 +105,7 @@ El formato utilizado es:
 
 - TIPO;dato1;dato2;dato3
 
-Ejemplo:
+**Ejemplo:**
 
 - TOUR;City Tour;Puerto Varas;15000
 
@@ -111,6 +116,50 @@ El sistema permite:
 - Buscar tour por nombre
 - Filtrar tour por lugar
 - Filtrar tour por precio máximo
+
+## Actualización del programa
+
+El objetivo de esta semana fue implementar una jerarquía de clases utilizando herencia simple en Java para representar los distintos servicios turísticos que ofrece la agencia Llanquihue Tour.
+
+## Clases creadas
+
+### ServicioTuristico
+
+Se crea como una superclase para obtener nombre y duración de horas.
+
+### RutaGastronomica
+
+Representa un recorrido gastronómico. Hereda de `ServicioTuristico` y agrega el atributo `numeroDeParadas`, que indica la cantidad de lugares gastronómicos que se visitan durante el recorrido.
+
+**Ejemplo:**
+
+- Nombre: Ruta del Salmón
+- Duración: 4 horas
+- Número de paradas: 5
+
+### PaseoLacustre
+
+Representa un paseo por un lago. Hereda de `ServicioTuristico` y agrega el atributo `tipoEmbarcacion`, que indica el medio de transporte utilizado en el recorrido.
+
+**Ejemplo:**
+
+- Nombre: Lago Llanquihue
+- Duración: 2 horas
+- Tipo de embarcación: Catamarán
+
+### ExcursionCultural
+
+Representa una excursión enfocada en lugares históricos o culturales. Hereda de `ServicioTuristico` y agrega el atributo `lugarHistorico`, que identifica el sitio principal que se visita.
+
+**Ejemplo:**
+
+- Nombre: Museo Colonial Alemán
+- Duración: 2 horas
+- Lugar histórico: Frutillar
+
+### GestorServicios
+
+Se encarga de crear las instancias de los distintos servicios turísticos y mostrarlas mediante el método `mostrarServicios()`.
 
 ## Ejecución del programa
 
@@ -130,3 +179,6 @@ El sistema permite:
 - Operadores
 - Resultados de filtros
 - Búsquedas
+- Servicios turisticos 
+
+

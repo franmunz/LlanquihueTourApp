@@ -22,14 +22,6 @@ public class Persona {
         return nombre;
     }
 
-    public String getRut() {
-        return rut;
-    }
-
-    public Direccion getDireccion() {
-        return direccion;
-    }
-
 
     @Override
     public String toString() {
