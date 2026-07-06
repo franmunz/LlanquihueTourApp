@@ -179,6 +179,51 @@ Se encarga de crear las instancias de los distintos servicios turísticos y most
 - Operadores
 - Resultados de filtros
 - Búsquedas
-- Servicios turisticos 
+- Servicios turisticos
 
+## Actualización del programa
+
+Se realizó nuevamente una actualización en el programa, donde modificamos las clases de los servicios turísticos, incorporando el método `mostrarInformacion()`, que es sobrescrito por cada subclase.
+También se utilizó una colección `List<ServicioTuristico>` para almacenar distintos tipos de servicios y recorrerlos de forma polimórfica mediante un bucle `for-each`.
+
+## Clases modificadas
+
+### ServicioTuristico
+
+Superclase que contiene los atributos comunes (`nombre` y `duracionHoras`) y el método `mostrarInformacion()`, utilizado como base para el polimorfismo.
+
+### RutaGastronomica
+
+Hereda de `ServicioTuristico` y sobrescribe el método `mostrarInformacion()` para mostrar la información de una ruta gastronómica.
+
+### PaseoLacustre
+
+Hereda de `ServicioTuristico` y sobrescribe el método `mostrarInformacion()` para mostrar la información de un paseo lacustre.
+
+### ExcursionCultural
+
+Hereda de `ServicioTuristico` y sobrescribe el método `mostrarInformacion()` para mostrar la información de una excursión cultural.
+
+### GestorServicios
+
+Administra una colección `List<ServicioTuristico>`, crea instancias de los distintos servicios turísticos y las recorre utilizando polimorfismo.
+
+### Main
+
+Clase principal que ejecuta el programa y llama a `GestorServicios` para mostrar la información de los servicios turísticos.
+
+## Conceptos aplicados
+
+- Herencia simple.
+- Polimorfismo.
+- Sobrescritura de métodos (`@Override`).
+- Colecciones genéricas (`List` y `ArrayList`).
+- Recorrido de colecciones mediante `for-each`.
+
+## Instrucciones para ejecutar el programa
+
+1. Abrir el proyecto **LlanquihueTourApp** en IntelliJ IDEA.
+2. Verificar que el archivo `datos.txt` se encuentre en la carpeta correspondiente del proyecto.
+3. Ejecutar la clase `Main.java`.
+4. El programa cargará los datos existentes y mostrará los servicios turísticos almacenados en la colección utilizando polimorfismo.
 

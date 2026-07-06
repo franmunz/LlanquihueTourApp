@@ -4,6 +4,8 @@ import llanquihue.tour.model.*;
 import llanquihue.tour.data.GestorDatos;
 import llanquihue.tour.data.GestorServicios;
 
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -52,10 +54,15 @@ public class Main {
             System.out.println("No encontrado");
         }
 
-        System.out.println("\n=== SERVICIOS TURISTICOS ===");
+        System.out.println("\n=== SERVICIOS TURISTICOS ===\n");
 
         GestorServicios gestor = new GestorServicios();
-                gestor.mostrarServicios();
-        }
 
+        List<ServicioTuristico> lista = gestor.obtenerServicios();
+
+        for(ServicioTuristico servicio : lista){
+            servicio.mostrarInformacion();
+            System.out.println("----------------");
+        }
     }
+}
