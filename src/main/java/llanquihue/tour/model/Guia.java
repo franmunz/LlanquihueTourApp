@@ -1,6 +1,8 @@
 package llanquihue.tour.model;
 
-public class Guia extends Persona{
+import llanquihue.tour.interfaces.Registrable;
+
+public class Guia extends Persona implements Registrable {
 
     private String especialidad;
 
@@ -13,4 +15,14 @@ public class Guia extends Persona{
     public String toString() {
         return "Nombre Guia: " + getNombre() + ", Especialidad: " + especialidad;
     }
+
+    public String getEspecialidad() {
+        return especialidad;
+    }
+
+    @Override
+    public void mostrarResumen(){
+        System.out.println("Guía: " + getNombre() + " | Especialidad: " + especialidad);
+    }
+
 }

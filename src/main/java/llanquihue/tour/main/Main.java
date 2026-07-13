@@ -3,12 +3,15 @@ package llanquihue.tour.main;
 import llanquihue.tour.model.*;
 import llanquihue.tour.data.GestorDatos;
 import llanquihue.tour.data.GestorServicios;
+import llanquihue.tour.gui.VentanaLlanquihue;
 
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
+
+        new VentanaLlanquihue();
 
         GestorDatos datos = new GestorDatos();
         datos.cargarDesdeArchivo("datos.txt");
@@ -32,8 +35,6 @@ public class Main {
         for (Operador o : datos.listarOperadores()) {
             System.out.println(o);
         }
-
-
 
         System.out.println("\n=== FILTRO POR LUGAR ===");
         for (Tour t : datos.filtrarPorLugar("Puerto Varas")) {
@@ -64,5 +65,11 @@ public class Main {
             servicio.mostrarInformacion();
             System.out.println("----------------");
         }
+
+        GestorDatos entidades = new GestorDatos();
+        entidades.mostrarEntidades();
+
+
     }
+
 }

@@ -18,6 +18,12 @@ LlanquihueTourApp
 │   │ └── GestorDatos.java
 │   │ └── GestorServicios.java
 │   │
+│   ├── gui
+│   │ └── VentanaLlanquihue   
+│   │
+│   ├── interfaces
+│   │ └── Registrable 
+│   │
 │   ├── main
 │   │ └── Main.java
 │   │
@@ -31,7 +37,9 @@ LlanquihueTourApp
 │   │ ├── ServicioTuristico.java 
 │   │ ├── RutaGastronomica.java
 │   │ ├── PaseoLacustre.java 
-│   │ └── ExcursionCultural.java
+│   │ ├── ExcursionCultural.java
+│   │ ├── Vehiculo.java
+│   │ └── ColaboradorExterno
 │   │ 
 │   └── util
 │     └── Validacion.java
@@ -227,3 +235,49 @@ Clase principal que ejecuta el programa y llama a `GestorServicios` para mostrar
 3. Ejecutar la clase `Main.java`.
 4. El programa cargará los datos existentes y mostrará los servicios turísticos almacenados en la colección utilizando polimorfismo.
 
+## Actualización del programa : Integrando interfaces, polimorfismo y estruturas dinámicas
+
+En esta semana se amplió el sistema de la agencia Llanquihue Tour, incorporando interfaces, colecciones genéricas, validación mediante instanceof y una interfaz gráfica básica desarrollada con Swing. Estas mejoras permiten administrar distintas entidades del sistema de manera más flexible y facilitar el ingreso y visualización de información por parte del usuario.
+
+## Funcionalidades implementadas
+### 1. Interfaz Registable
+
+Se creó la interfaz Registable, la cual define el método: `void mostrarResumen();`. Esta interfaz actúa como un contrato común para todas las entidades que pueden ser registradas en el sistema.
+
+Las clases que implementan esta interfaz son:
+
+- Guia
+- Vehiculo
+- ColaboradorExterno
+
+Cada una implementa el método mostrarResumen() mostrando información personalizada según el tipo de entidad. La clase Guia se modificó para lo que se pedía esta semana.
+
+### 2. Polimorfismo
+
+Se utilizó una colección genérica: `ArrayList<Registable> entidades;` . Esta colección permite almacenar objetos de diferentes clases siempre que implementen la interfaz Registable, gracias al polimorfismo, todas las entidades pueden recorrerse utilizando el mismo tipo de referencia.
+
+### 3. Uso de instanceof
+
+Durante el recorrido de la colección se utilizó el operador instanceof para identificar el tipo real del objeto. Permite ejecutar acciones específicas dependiendo de si el objeto corresponde a un guía, un vehículo o un colaborador externo.
+Se modifica la clase `GestorDatos` y se utiliza para el uso del instanceof.
+
+### 4. Nuevas entidades
+
+Se incorporaron nuevas clases al sistema:
+
+- `Vehículo`: representa los medios de transporte utilizados por la agencia.
+- `ColaboradorExterno`: representa personas externas que prestan servicios a la empresa.
+
+Ambas implementan la interfaz Registable.
+
+### 5. Interfaz gráfica (Swing)
+
+Se desarrolló una ventana utilizando JFrame.
+
+La interfaz permite:
+
+- Seleccionar el tipo de entidad mediante un JComboBox;
+- Ingresar información utilizando JTextField;
+- Registrar entidades con el botón Guardar;
+- Limpiar los campos mediante el botón Limpiar;
+- Visualizar las entidades registradas en un JTextArea.

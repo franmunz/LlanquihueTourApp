@@ -1,5 +1,6 @@
 package llanquihue.tour.data;
 
+import llanquihue.tour.interfaces.Registrable;
 import llanquihue.tour.model.*;
 
 import java.io.BufferedReader;
@@ -12,12 +13,14 @@ public class GestorDatos {
     private ArrayList<Guia> guias;
     private ArrayList<Operador> operadores;
     private ArrayList<Cliente> clientes;
+    private ArrayList<Registrable> entidades;
 
     public GestorDatos() {
         this.tours = new ArrayList<>();
         this.guias = new ArrayList<>();
         this.operadores = new ArrayList<>();
         this.clientes = new ArrayList<>();
+        this.entidades = new ArrayList<>();
     }
 
     public void cargarDesdeArchivo(String ruta) {
@@ -80,6 +83,7 @@ public class GestorDatos {
 
     public void agregarGuia(Guia g) {
         guias.add(g);
+        entidades.add(g);
     }
 
     public void agregarOperador(Operador o) {
@@ -87,6 +91,13 @@ public class GestorDatos {
     }
     public void agregarCliente(Cliente c) {
         clientes.add(c);
+    }
+    public void agregarVehiculo(Vehiculo v) {
+        entidades.add(v);
+    }
+
+    public void agregarColaborador(ColaboradorExterno c) {
+        entidades.add(c);
     }
 
     public ArrayList<Tour> listarTours() {
@@ -141,4 +152,31 @@ public class GestorDatos {
 
         return resultado;
     }
+
+    public void mostrarEntidades(){
+
+        entidades.add(new Guia("Ana Perez", "20856754-3", new Direccion("San Pedro", "Puerto Varas"), "Trekking"));
+        entidades.add(new Vehiculo("AB-1234", "Minibús"));
+        entidades.add(new ColaboradorExterno("Carlos Díaz", "Chófer"));
+        {
+            for (Registrable r : entidades){
+                r.mostrarResumen();
+
+                if (r instanceof Guia g){
+                    System.out.println("-> Especialidad: " + g.getEspecialidad());
+
+                } else if (r instanceof Vehiculo v){
+                    System.out.println("-> Tipo: " + v.getTipo());
+
+                } else if (r instanceof ColaboradorExterno c){
+                    System.out.println("-> Colaborador: " + c.getRol());
+                }
+
+            }
+        }
+    }
 }
+
+
+
+
